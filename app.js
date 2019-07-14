@@ -19,10 +19,6 @@ bot.on("ready", () => {
 });
 
 
-bot.on("error", (error) => {
-    bot.login(config.token);
-});
-
 bot.registry.registerGroup('dms', 'help');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
@@ -34,8 +30,6 @@ function clear() {
     console.log(`\nForked and improved by Alex.\n Random send time set @ 0.01-${config.wait}s`);
     console.log(`Type ${config.prefix}help in a chat.\n\n`);
 }
-// Load up the discord.js library
-const Discord = require("discord.js");
 
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
