@@ -37,3 +37,12 @@ function clear() {
     console.log(`\nForked and improved by Alex.\n Random send time set @ 0.01-${config.wait}s`);
     console.log(`Type ${config.prefix}help in a chat.\n\n`);
 }
+client.on('ready', () => {
+    // Set bot status to: "Playing with JavaScript"
+    client.user.setActivity("with DMS")
+
+    // Alternatively, you can set the activity to any of the following:
+    // PLAYING, STREAMING, LISTENING, WATCHING
+    // For example:
+    // client.user.setActivity("TV", {type: "WATCHING"})
+})
