@@ -1,35 +1,5 @@
-const Discord = require('discord.js');
-const figlet = require('figlet');
-const colors = require('colors');
-const readline = require('readline');
-const commando = require(`discord.js-commando`);
-
-const config = require('./config.json');
-const bot = new commando.Client({
-    commandPrefix:'mass!'
-});
-
-const cmdsArray = [
-    "dmall <message>",
-    "dmrole <role> <message>"
-];
-
-bot.on("ready", () => {
-    clear();
-});
-
-
-bot.registry.registerGroup('dms', 'help');
-bot.registry.registerDefaults();
-bot.registry.registerCommandsIn(__dirname + "/commands");
-
-function clear() {
-    console.clear();
-    console.log(figlet.textSync("MassDM v3.2.0").green);
-    console.log("\n\nMass DM bot for Discord. Credit to Gringo(Scammer ALT)!\nSends DMs to selected members of guild.");
-    console.log(`\nForked and improved by Alex.\n Random send time set @ 0.01-${config.wait}s`);
-    console.log(`Type ${config.prefix}help in a chat.\n\n`);
-}
+// Load up the discord.js library
+const Discord = require("discord.js");
 
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
@@ -163,4 +133,5 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 });
-bot.login(config.token);
+
+client.login(config.token);
