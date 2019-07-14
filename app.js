@@ -37,8 +37,3 @@ function clear() {
     console.log(`\nForked and improved by Alex.\n Random send time set @ 0.01-${config.wait}s`);
     console.log(`Type ${config.prefix}help in a chat.\n\n`);
 }
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
